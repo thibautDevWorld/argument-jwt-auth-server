@@ -11,7 +11,8 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  },
+  }
+  // folder: [{ type: Schema.Types.ObjectId, ref: 'Folder' }]
 });
 
 module.exports = model("User", userSchema);
