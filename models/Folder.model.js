@@ -12,9 +12,14 @@ const folderSchema = new Schema(
         theme: {
             type: String,
             enum: ['People', 'Politic', 'Health', 'Sport', 'Cooking'],
-        required: true
+            required: true
         },
-        articles: [{ type: Schema.Types.ObjectId, ref: 'Article' }]
+        articles: [
+            { type: Schema.Types.ObjectId, ref: 'Article' }
+        ],
+        user: { type: Schema.Types.ObjectId, ref: 'User' }
+
+
     }
 )
 

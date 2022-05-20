@@ -10,11 +10,12 @@ const articleSchema = new Schema(
             type: String,
             required: true
         },
-        Description: String,
+        description: String,
         link: String,
-        ImageLink: String,
-        VideoLink: String,
-        folder: { type: Schema.Types.ObjectId, ref: 'Folder' }
+        imageLink: String,
+        videoLink: String,
+        folder: { type: Schema.Types.ObjectId, ref: 'Folder' },
+        
     }
 )
 
