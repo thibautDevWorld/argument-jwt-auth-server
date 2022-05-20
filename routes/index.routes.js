@@ -9,11 +9,9 @@ router.get("/", (req, res, next) => {
 });
 
 
-router.use("/auth", authRoutes);
-router.use("/folders", folderRoutes);
-router.use("/articles", articleRoutes);
+router.use('/auth', authRoutes);
+router.use('/', folderRoutes);
+router.use('/', articleRoutes);
 
-
-// router.use("/auth", authRoutes);
 
 module.exports = router;
