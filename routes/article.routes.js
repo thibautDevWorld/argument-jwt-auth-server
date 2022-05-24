@@ -92,6 +92,30 @@ router.get('/articles/:articleId', (req, res, next) => {
 })
 
 
+
+
+///Update article
+router.put('/articles/:articleId', (req, res, next) => {
+    const { articleId } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(articleId)) {
+        res.status(400).json({ message: "Specified id is not valid" })
+    }
+
+
+    Article.findByIdAndUpdate(articleId, req.body, { new: true })
+        .then((updateArticle) => res.json(updateArticle))
+        .catch(err => {
+            console.log("error updating the folder", err);
+            res.status(500).json({
+                message: "error updating the folder",
+                error: err
+            });
+        })
+})
+
+
+
 ///Delete articles
 router.delete('/articles/:articleId', (req, res, next) => {
     const { articleId } = req.params;

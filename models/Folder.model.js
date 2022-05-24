@@ -11,7 +11,7 @@ const folderSchema = new Schema(
         },
         theme: {
             type: String,
-            enum: ['People', 'Politic', 'Health', 'Sport', 'Cooking'],
+            enum: ['People', 'Politic', 'Health', 'Sport', 'Cooking', 'Fashion'],
             required: true
         },
         articles: [

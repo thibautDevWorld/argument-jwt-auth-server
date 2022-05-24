@@ -9,6 +9,11 @@ const User = require('../models/User.model');
 
 ///Create an userFolder
 router.post('/folder', (req, res, next) => {
+
+    // @todo: 
+    // - get user id from req.payload (not from req.body)
+    // - rename to follow REST
+
     const { title, theme, userId } = req.body;
 
 
