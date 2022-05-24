@@ -39,16 +39,16 @@ router.post('/folder', (req, res, next) => {
 
 
 /// Diplay list of userFolders
-router.get('/:userId', (req, res, next) => {
-    const { userId } = req.params;
+router.get('/userfolders', (req, res, next) => {
 
     Folder.find()
         .populate('articles')
         .then(allFolders => {
-            const userFalders = allFolders.filter((folder) => {
-                return folder.user == userId
+            const userFolders = allFolders.filter((folder) => {
+                return folder.user == req.payload._id
             })
-            res.status(200).json(userFalders)
+
+            res.status(200).json(userFolders)
            
         })
         .catch(err => {
