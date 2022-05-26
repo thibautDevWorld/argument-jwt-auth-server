@@ -7,11 +7,10 @@ const folderSchema = new Schema(
         title: {
             type: String,
             required: true,
-            unique: true
         },
         theme: {
             type: String,
-            enum: ['People', 'Politic', 'Health', 'Sport', 'Cooking', 'Fashion'],
+            enum: ['People', 'Politic', 'Health', 'Sport', 'Cooking', 'Fashion', 'Lifestyle', 'Science', 'Funny'],
             required: true
         },
         articles: [
